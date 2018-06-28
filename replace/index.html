@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>New News</title>
+  <meta charset="utf-8">
+  <meta name="description" content="News">
+  <meta name="keywords" content="News,Media,Media Bubble">
+  <meta name="author" content="Ji Park">
+  <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- external CSS link -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8"/>
+  <link rel="stylesheet" href="https://use.typekit.net/yas4mgh.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+</head>
+<body>
+  <header id="myDIV">
+    <!-- <div class="header-content">
+      <a href="index.html" style='color:white;'><span style='margin-right:30px'>NEU NEWS</span></a>
+      <span style='margin-right:30px'>ABOUT</span>
+    </div> -->
+    <div class='input-wrapper'>
+      <span class="glyphicon glyphicon-search" id='gly'></span>
+      <input type="text" id="search" name="search" placeholder="Search"  onkeydown="search(this)">
+    </div>
+
+  </header>
+
+
+<!-- <div id='main-start'></div> -->
+    <div class='button-box'><div id='sa-button' class='data-button'>&darr;</div></div>
+  <div id="loading-page">
+    <div id="input-value"></div>
+    <!-- Loading<span class="loader__dot">.</span><span class="loader__dot">.</span><span class="loader__dot">.</span></div> -->
+  </div>
+
+
+    <div id='text-length'></div>
+
+      <div class='overlay'>
+        <div id='overlay-analysis'></div>
+        <div id='overlay-cont'></div>
+      </div>
+  <div id='main-box' class="main">
+    <div id="headline-content" class="headline"></div>
+  </div>
+
+  <footer id='footer'>
+  <div class="sentiment-analysis" id="sa-menu"><span>Sentiment Analysis</span></div>
+  <div class="text-display" id="about-menu"><span>About</span></div>
+  </footer>
+
+
+<script src="js/scripts.js"></script>
+<script type="text/javascript">
+
+// var display2=true;
+// $('.ng-title h1').click(function() {
+//       if ( display2 === true ) {
+//
+//         display2=false;
+//         $('.hdnegtative-inner span').css({"background-color":"black"});
+//         $('.hdpositive-inner span').css({"background-color":"black"});
+//       } else if ( display2 === false ) {
+//         display2=true;
+//         $('.hdnegtative-inner span').css({"background-color":"#00e025"});
+//         $('.hdpositive-inner span').css({"background-color":"#0011ff"});
+//       }
+//   });
+
+
+var display=true;
+$('.sentiment-analysis').click(function() {
+      if ( display === true ) {
+        display=false;
+
+          $('#text-length').slideDown("slow");
+
+      } else if ( display === false ) {
+        display=true;
+            $('#overlay-analysis').css({"display":"none"});
+            $('#text-length').slideUp("slow");
+
+
+      }
+  });
+
+
+</script>
+</body>
+</html>

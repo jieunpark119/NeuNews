@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>New News</title>
+  <meta charset="utf-8">
+  <meta name="description" content="News">
+  <meta name="keywords" content="News,Media,Media Bubble">
+  <meta name="author" content="Ji Park">
+  <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- external CSS link -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8"/>
+  <link rel="stylesheet" href="https://use.typekit.net/yas4mgh.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+</head>
+<body>
+  <header id="myDIV">
+    <!-- <div class="header-content">
+      <a href="index.html" style='color:white;'><span style='margin-right:30px'>NEU NEWS</span></a>
+      <span style='margin-right:30px'>ABOUT</span>
+    </div> -->
+    <div class='input-wrapper'>
+      <span class="glyphicon glyphicon-search" id='gly'></span>
+      <input type="text" id="search" name="search" placeholder="Search"  onkeydown="search(this)">
+    </div>
+
+  </header>
+
+
+<div id='main-start'>Enter a keyword for sentiment analysis</div>
+  <div id="loading-page">
+    <div id="input-value"></div>
+    <!-- Loading<span class="loader__dot">.</span><span class="loader__dot">.</span><span class="loader__dot">.</span></div> -->
+  </div>
+
+
+    <div id='text-length'></div>
+    <div class='about-content'>
+      <div class='about-first'>
+        <div class='first'>
+          <h1>
+          Neu News algorithm analyzes a given keyword’s sentiment by looking at how different media platforms respond to the same subject. It analayzes different media platforms' choice of language in delivering latest news
+          and further classifies articles into <span class='positive' style='font-family: augustlight;color:#f7f7f7'>positive</span> and <span class='negative' style='  font-family: augustlight;color:#f7f7f7'>negative</span> categories. By doing so, it visualizes overall emotional response to the subject.
+        </h1>
+        <div>
+        <h1 style='font-size:16px;'>
+        </br>
+        Concept & Production by <a href="http://www.jipark.org/" style='color:black;text-decoration:underline'>Ji Park</a>
+        </h1>
+        </div>
+      </div>
+
+      </div>
+
+    </div>
+
+      <div class='overlay'>
+        <div id='overlay-analysis'></div>
+        <div id='overlay-cont'></div>
+      </div>
+  <div id='main-box' class="main">
+    <div id="headline-content" class="headline"></div>
+  </div>
+
+  <footer id='footer'>
+  <div class="sentiment-analysis" id="sa-menu"><span>Sentiment Analysis</span></div>
+  <div class="text-display" id="about-menu"><span>About</span></div>
+  </footer>
+
+
+<script src="js/scripts.js"></script>
+<script type="text/javascript">
+
+var display2=true;
+$('.text-display').click(function() {
+      if ( display2 === true ) {
+        display2=false;
+        $('.about-content').slideDown("slow");;
+      } else if ( display2 === false ) {
+        display2=true;
+        $('.about-content').slideUp("slow");
+      }
+  });
+
+
+var display=true;
+$('.sentiment-analysis').click(function() {
+      if ( display === true ) {
+        display=false;
+
+          $('#text-length').slideDown("slow");
+
+      } else if ( display === false ) {
+        display=true;
+            $('#overlay-analysis').css({"display":"none"});
+            $('#text-length').slideUp("slow");
+
+
+      }
+  });
+
+
+</script>
+</body>
+</html>
